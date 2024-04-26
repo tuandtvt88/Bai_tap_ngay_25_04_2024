@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Tìm min của các phần tử chẵn [1,2,3,4,5,2,0,1,2]</h2>
+<p id="kq1"></p>
+<p id="kq2"></p>
+<body>
+<script>
+    let ab = [1,2,3,4,5,2,0,1,2];
+    let min;
+    for (let i = 0;i<ab.length;i++){
+    if (ab[i]%2===0){
+        let chan=ab[i]
+        document.getElementById('kq1').innerHTML += 'các số chẵn là: ' + chan + '<br>'
+        if (min === undefined|| min>chan){
+            min= chan;
+        }
+    }
+ }
+    document.getElementById('kq2').innerHTML +='số chẵn nhỏ nhất là: '+ min
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Kiểm tra mảng tăng giảm</h2>
+<p id="kq"></p>
+<p id="kq1"></p>
+<body>
+<script>
+    let ab = [];
+    let soluong = prompt("Nhập vào số lượng các phần tử");
+    for(let i = 0; i < soluong; i++){
+        let pt = parseInt(prompt("Nhập phần tử thứ " + (i + 1)));
+        ab.push(pt);
+    }
+    let tang = true;
+    let giam = true;
+    for(let i = 0; i < soluong - 1; i++){
+        if(ab[i] > ab[i+1]) tang = false;
+        if(ab[i] < ab[i+1]) giam = false;
+    }
+    if(tang){
+        document.getElementById('kq1').innerHTML = 'Mảng tăng';
+    } else if(giam){
+        document.getElementById('kq1').innerHTML = 'Mảng giảm';
+    } else {
+        document.getElementById('kq1').innerHTML = 'Mảng không tăng không giảm';
+    }
+    document.getElementById('kq').innerHTML = 'Các phần tử trong mảng là: ' + ab;
+</script>
+</body>
+</html>

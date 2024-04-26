@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Tìm max thứ hai của dãy sô [1,2,3,4,4,5,5,5]</h2>
+<p id="kq"></p>
+<p id="kq1"></p>
+<body>
+<script>
+    let ab = [1,2,3,4,4,5,5,5];
+    let max1 = ab[0];
+    let max2 = null;
+    for (let i =0 ;i<ab.length;i++){
+        if(ab[i]>max1){
+            max2=max1;
+            max1=ab[i];
+            // mã max2 = max1; max1 = ab[i]; có nghĩa là:
+            //     Đặt giá trị lớn nhất thứ hai (max2) bằng giá trị lớn nhất hiện tại (max1).
+            //     Cập nhật giá trị lớn nhất (max1) thành giá trị mới (ab[i]) vì ab[i] lớn hơn max1.
+        }
+        else if (ab[i]>max2 && ab[i]!=max1){
+            // Đoạn code else if(max2 < ab[i] && ab[i] != max1){ max2 = ab[i] } kiểm tra và cập nhật giá trị lớn thứ hai (max2) trong mảng.
+            //     Cụ thể, nếu một giá trị ab[i] lớn hơn max2 nhưng khác giá trị max1 (đảm bảo rằng max2 không bằng với max1), giá trị max2 sẽ được cập nhật thành giá trị mới đó.
+            max2 = ab[i];
+        }
+    }
+    document.getElementById('kq').innerHTML = 'Giá trị lớn nhất là: '+ max1
+    document.getElementById('kq1').innerHTML = 'Giá trị lớn thứ hai là: '+max2
+</script>
+</body>
+</html>
